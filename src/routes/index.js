@@ -1,6 +1,7 @@
 const { Router } = require('express')
 
 const ChartsController = require('../app/Controllers/ChartsController/ChartsController')
+const DetailsController = require('../app/Controllers/DetailsController/DetailsController')
 const routes = new Router()
 
 routes.get('/', (req, res) => {
@@ -11,4 +12,5 @@ routes.get('/', (req, res) => {
 
 routes.get('/charts', ChartsController.getCharts)
 
+routes.get('/artist/:id', DetailsController.artist)
 module.exports = routes
