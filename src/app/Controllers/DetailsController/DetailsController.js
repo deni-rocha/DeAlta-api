@@ -9,7 +9,10 @@ class DetailsController {
             const responseDeezer = await axios.get(`https://api.deezer.com/artist/${id}/top?limit=5`)
             const data = responseDeezer.data
 
-            res.status(200).json(data)
+            // remove propriedade contributors
+            const dataFiltered = data.data.filter(obj => delete obj.contributors)                               
+
+            res.status(200).json(dataFiltered)
         } catch (error) {
             res.status(404).json(error)
         }
