@@ -40,7 +40,6 @@ body {
 }
 
 .listNav li {
-    padding: 4px;
     list-style: none;
     margin-bottom: 1rem;
     transition: all .3s;
@@ -48,6 +47,7 @@ body {
 }
 
 .listNav a {
+    padding: 4px;
     cursor: pointer;
     color: #141E27;
     text-decoration: none;
