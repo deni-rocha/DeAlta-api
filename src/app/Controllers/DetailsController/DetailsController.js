@@ -55,6 +55,19 @@ class DetailsController {
             res.status(404).json(error)
         }
     }
+
+    async getPodcast(req,res){
+        try{
+
+            const { id } = req.params
+            const responseDeezer = await axios.get(`https://api.deezer.com/podcast/${id}`)
+            const data = responseDeezer.data
+
+            res.status(200).json(data)
+        } catch (error){
+            res.status(404).json(error)
+        }
+    }
 }
 
 module.exports = new DetailsController()

@@ -43,6 +43,14 @@ class PageController {
       }
     })
   }
+
+  getPodcast(req, res){
+    res.sendFile(fileName, getOptions('Podcast'), function (err) {
+      if (err) {
+        next(err)
+      }
+    })
+  }
 }
 
 
