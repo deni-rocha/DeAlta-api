@@ -19,6 +19,14 @@ class PageController {
       }
     })
   }
+
+  getTrack(req, res){
+    res.sendFile(fileName, getOptions('Track'), function (err) {
+      if (err) {
+        next(err)
+      }
+    })
+  }
 }
 
 

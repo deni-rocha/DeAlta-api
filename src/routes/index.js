@@ -22,4 +22,17 @@ routes.get('/artist/:id?', (req, res, next) => {
 
 } ,DetailsController.getArtist)
 
+routes.get('/track/:id?',(req, res, next) => {
+
+    const { id } = req.params
+
+    if(!id){
+        PageController.getTrack(req, res)
+    } else {
+        next()
+    }
+
+
+} ,DetailsController.getTrack)
+
 module.exports = routes
