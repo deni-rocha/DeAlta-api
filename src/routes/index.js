@@ -61,4 +61,17 @@ routes.get('/playlist/:id?',(req, res, next) => {
 
 } ,DetailsController.getPlaylist)
 
+routes.get('/podcast/:id?',(req, res, next) => {
+
+    const { id } = req.params
+
+    if(!id){
+        PageController.getPodcast(req, res)
+    } else {
+        next()
+    }
+
+
+} ,DetailsController.getPodcast)
+
 module.exports = routes
