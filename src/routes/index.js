@@ -35,4 +35,30 @@ routes.get('/track/:id?',(req, res, next) => {
 
 } ,DetailsController.getTrack)
 
+routes.get('/album/:id?',(req, res, next) => {
+
+    const { id } = req.params
+
+    if(!id){
+        PageController.getAlbum(req, res)
+    } else {
+        next()
+    }
+
+
+} ,DetailsController.getAlbum)
+
+routes.get('/playlist/:id?',(req, res, next) => {
+
+    const { id } = req.params
+
+    if(!id){
+        PageController.getPlaylist(req, res)
+    } else {
+        next()
+    }
+
+
+} ,DetailsController.getPlaylist)
+
 module.exports = routes
