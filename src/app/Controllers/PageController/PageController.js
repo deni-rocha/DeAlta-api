@@ -27,6 +27,22 @@ class PageController {
       }
     })
   }
+
+  getAlbum(req, res){
+    res.sendFile(fileName, getOptions('Album'), function (err) {
+      if (err) {
+        next(err)
+      }
+    })
+  }
+
+  getPlaylist(req, res){
+    res.sendFile(fileName, getOptions('Playlist'), function (err) {
+      if (err) {
+        next(err)
+      }
+    })
+  }
 }
 
 
